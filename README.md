@@ -1,3 +1,6 @@
 # sm_test
+For Technical Test purpose.
 
-A new Flutter project.
+Note : The uploaded APK is in the root directory.
+
+Thank you !!

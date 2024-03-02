@@ -27,7 +27,7 @@ dynamic snackbarAlert(
   final snackBar = SnackBar(
     content: Text(
       "$title $message",
-      style: caption1,
+      style: paragraph2.copyWith(color: AppColor.primary),
     ),
     backgroundColor: type.value,
     duration: Duration(seconds: duration),

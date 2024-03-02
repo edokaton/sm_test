@@ -42,15 +42,16 @@ class _PostScreenState extends State<PostScreen> {
       body: RefreshIndicator(
         onRefresh: () async => getPosts(),
         child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 32,
-            ),
-            child: Center(
-              child: !isLoading
-                  ? ListView.separated(
+          child: !isLoading
+              ? SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 32,
+                    ),
+                    child: ListView.separated(
                       shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: posts.length,
                       itemBuilder: (context, index) {
                         final PostModel post = PostModel.fromJson(posts[index]);
@@ -86,10 +87,12 @@ class _PostScreenState extends State<PostScreen> {
                         color: Colors.black,
                         thickness: 1,
                       ),
-                    )
-                  : const CircularProgressIndicator(),
-            ),
-          ),
+                    ),
+                  ),
+                )
+              : const Center(
+                  child: CircularProgressIndicator(),
+                ),
         ),
       ),
     );

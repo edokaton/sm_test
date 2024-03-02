@@ -151,7 +151,6 @@ class _PostDetailScreenState extends State<PostDetailScreen> {
       setState(() {
         comments = response.data;
       });
-      debugPrint("comments => ${response.data}");
     } catch (e) {
       setState(() {
         isLoading = false;

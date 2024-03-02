@@ -45,8 +45,6 @@ class BottomNavbarWidget extends StatelessWidget {
       unselectedLabelStyle: heading6,
       currentIndex: currentIndex,
       onTap: (int index) async {
-        debugPrint("index => $index");
-        debugPrint("index.runtimeType => ${index.runtimeType}");
         changeNavbar(index: index);
       },
     );

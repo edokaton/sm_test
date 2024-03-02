@@ -10,7 +10,7 @@ class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
   static List<Widget> bottomNavPages = [
     const PostScreen(),
-    ProfileScreen(),
+    const ProfileScreen(),
   ];
 
   @override
